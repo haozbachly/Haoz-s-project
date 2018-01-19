@@ -1,4 +1,4 @@
-/*Create a two-dimensional array with object literal that contains information about quote, source, category, citation (optional), date (optional) 
+/*Create a two-dimensional array with object literal that contains information about quote, source, category, citation (optional), date (optional)
 for each object inside.*/
 const quotes = [
   {
@@ -53,7 +53,7 @@ const quotes = [
 ]
 // getRandomQuote function: generate a randomNumber to select a random object inside the quotes array
 function getRandomQuote (listOfQuotes) {
-  let number = Math.floor(Math.random() * (listOfQuotes.length + 1));
+  let number = Math.floor(Math.random() * (listOfQuotes.length));
   return listOfQuotes[number];
 }
 /* printQuote function: adding contents from quotes array to proper HTML tag:
@@ -74,7 +74,7 @@ function printQuote() {
   if (action.citation !== '') {
     let span1 = document.createElement('span');
     adding.append(span1.innerHTML = `, ${action.citation}`);
-  }  
+  }
   if (action.date !== '') {
     let span2 = document.createElement('span');
     adding.append(span2.innerHTML = `, ${action.date}`) ;
