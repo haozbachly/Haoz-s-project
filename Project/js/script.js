@@ -50,7 +50,8 @@ const quotes = [
     citation: 'Henry V: Act 4, Scene 4, Page 4',
     date: '',
   }
-]
+];
+let interval;
 // getRandomQuote function: generate a randomNumber to select a random object inside the quotes array
 function getRandomQuote (listOfQuotes) {
   let number = Math.floor(Math.random() * (listOfQuotes.length));
@@ -80,6 +81,8 @@ function printQuote() {
     adding.append(span2.innerHTML = `, ${action.date}`) ;
   }
   document.body.style.backgroundColor=`rgb(${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)})`;
+  clearInterval(interval);
+  interval = setInterval(printQuote, 5000);
 }
 
 /* event listener to respond to "Show another quote" button clicks
@@ -88,4 +91,4 @@ function printQuote() {
 document.getElementById('loadQuote').addEventListener("click", printQuote);
 
 // set an interval of changing quotes between 10 secconds
-setInterval(printQuote, 10000);
+interval = setInterval(printQuote, 5000);
